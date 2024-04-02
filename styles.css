@@ -1,0 +1,610 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  background: ;
+  background: linear-gradient(330deg, #0d716b, #1d7883, #327590)
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #05161A;
+    color: #AAA;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #AAA;
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #072E33;
+    color: #white;
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: #6da56c6;
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+#cards {
+  width: 100%;
+  padding-inline: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  min-width: 200px;
+  height: 350px;
+  flex: 1 1 250px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  position: relative;
+}
+
+#cards:hover > .card {
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--color) / 1),
+    rgba(255, 255, 255, 0.12) 40%
+  );
+}
+
+.card-content {
+  position: absolute;
+  inset: 1px;
+  background-color: #131315;
+  border-radius: inherit;
+}
+
+.card:nth-child(1) {
+  --color: 348 80% 60%;
+}
+.card:nth-child(2) {
+  --color: 0 0% 100%;
+}
+.card:nth-child(3) {
+  --color: 220 100% 35%;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    500px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--color) / 0.35),
+    transparent 40%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 2;
+}
+
+#cards:hover > .card::before {
+  opacity: 1;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.card-content > i {
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card-content > p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card-content > a {
+  width: 90%;
+  padding-block: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+.card-content > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.form-container {
+  width: 400px;
+  background: linear-gradient(#05161A, #05161A) padding-box,
+              linear-gradient(145deg, transparent 35%,#05161A, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #717171;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  color: #717171;
+  height: 96px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #05161A;
+}
+
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: inherit;
+  color: #717171;
+  font-weight: 600;
+  width: 40%;
+  background: #313131;
+  border: 1px solid #414141;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #05161A;
+  border-color: #05161A;
+}
+/* This is an example, feel free to delete this code */
+.tooltip-container {
+  background: rgb(3, 169, 244);
+  background: linear-gradient(
+    138deg,
+    rgba(3, 169, 244, 1) 15%,
+    rgba(63, 180, 233, 1) 65%
+  );
+  position: relative;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0.7em 0.7em;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.tooltip-container:hover {
+  background: #fff;
+  transition: all 0.6s;
+}
+.tooltip-container .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #fff;
+  transition: all 0.2s;
+}
+.tooltip-container:hover .text {
+  fill: rgb(3, 169, 244);
+  transition: all 0.6s;
+}
+
+/* Inicio do tooltip twitter */
+.tooltip1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #03a9f4;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip1 {
+  top: 150%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  border-radius: 50px;
+  transform: translate(-50%, -5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip1:hover {
+  background: #03a9f4;
+  fill: #fff;
+}
+/* Fim do tooltip twitter */
+
+/* Inicio do tooltip facebook */
+.tooltip2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #0462df;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip2 {
+  top: -120%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(-50%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-container:hover .tooltip2:hover {
+  background: #0462df;
+  fill: #fff;
+}
+/* Fim do tooltip facebook */
+
+/* Inicio do tooltip whatsApp */
+.tooltip3 {
+  position: absolute;
+  top: 100%;
+  left: 60%;
+  transform: translateX(80%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #1db954;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip3 {
+  top: 10%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(85%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip3:hover {
+  background: #1db954;
+  fill: #fff;
+}
+/* Fim do tooltip whatsApp */
+
+/* Inicio do tooltip Discord */
+.tooltip4 {
+  position: absolute;
+  top: 100%;
+  left: -190%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #8c9eff;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip4 {
+  top: 10%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip4:hover {
+  background: #8c9eff;
+  fill: #fff;
+}
+/* Fim do tooltip Discord */
+
+/* Inicio do tooltip pinterest */
+.tooltip5 {
+  position: absolute;
+  top: 100%;
+  left: -145%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #bd081c;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip5 {
+  top: -78%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip5:hover {
+  background: #bd081c;
+  fill: #fff;
+}
+/* Fim do tooltip pinterest */
+
+/* Inicio do tooltip dribbble */
+.tooltip6 {
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #ea4c89;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip6 {
+  top: -79%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip6:hover {
+  background: #ea4c89;
+  fill: #fff;
+}
+/* Fim do tooltip dribbble */
+
+/* Inicio do tooltip github */
+.tooltip7 {
+  position: absolute;
+  top: 100%;
+  left: 39%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #000;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip7 {
+  top: 104%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip7:hover {
+  background: #000;
+  fill: #fff;
+}
+/* Fim do tooltip github */
+
+/* Inicio do tooltip reddit */
+.tooltip8 {
+  position: absolute;
+  top: 100%;
+  left: -150%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #ff4500;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-container:hover .tooltip8 {
+  top: 101%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip8:hover {
+  background: #ff4500;
+  fill: #fff;
+}
+/* Fim do tooltip reddit */
+
+/* Inicio do tooltip fixo */
+.tooltip9 {
+  position: absolute;
+  top: 0;
+  left: -115%;
+  opacity: 0;
+  visibility: hidden;
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+}
+
+.tooltip-container:hover .tooltip9 {
+  top: -110%;
+  opacity: 1;
+  visibility: visible;
+  border-radius: 50%;
+  z-index: -1;
+}
+/* Fim do tooltip fixo */
+/* Por meio desse ultimo tooltip todos os outros podem
+ficar fixos quando houver no principal, para vê-lo dê um
+background black acima*/
+
+
+
